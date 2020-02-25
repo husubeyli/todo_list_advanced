@@ -44,9 +44,12 @@ function filterTodos(e){ // Tekrar todo daxil edilmemeyi ucun
 }
 
 function deleteTodo(e){ //Ekrandan todolari silmek
-    if(confirm('Silmək istədiyinizdən əminsiniz?')){    
     
-        if(e.target.className === "fa fa-remove"){
+    if(e.target.className === "fa fa-remove"){
+        if(confirm('Silmək istədiyinizdən əminsiniz?')){    
+
+            console.log(e.target);
+            
             e.target.parentElement.parentElement.remove()
             deleteTodoFromStorage(e.target.parentElement.parentElement.textContent)
             showAlert('success', 'Todo uğurla silindi...')
